@@ -1,0 +1,156 @@
+body {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-board {
+    width: 60vw;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    outline: 5px solid black;
+    outline-offset: 1px;
+    border-radius: 15px;
+    border-bottom: 20px solid forestgreen;
+    background-image: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+.placar {
+    background-color: #3333337d;
+    width: 10rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: Consolas, sans-serif;
+    font-weight: bold;
+    outline: 3px dashed black;
+    outline-offset: 0px;
+}
+.lucro {
+    color: greenyellow;
+}
+.perda {
+    color: red;
+}
+
+.player {
+    position: absolute;
+    bottom: 0;
+}
+
+.pipe,
+.pipe1 {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    transform: scale(0.4);
+    animation: pipe-animation 10s infinite linear;
+    display: flex;
+    align-items: center;
+}
+
+.pipe1 {
+    bottom: 80px;
+}
+
+.pipe span,
+.pipe1 span {
+    font-size: 2.5rem;
+    font-family: "Calibri";
+    font-weight: bold;
+    color: blue;
+    width: 20rem;
+}
+
+.coinBad {
+    background-image: url(../imgs/coin.png);
+    width: 170px;
+    height: 170px;
+    background-position: 0 0;
+    animation: coinRotate 0.5s steps(5) infinite;
+}
+.coin {
+    background-image: url(../imgs/coin.png);
+    width: 170px;
+    height: 170px;
+    background-position: 0 0;
+    animation: coinRotate 0.5s steps(5) infinite;
+}
+
+.manRun {
+    margin-bottom: -1.18rem;
+    width: 108px;
+    height: 140px;
+    background-image: url(../imgs/scott.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    animation: andaPlayer 0.6s steps(8) infinite;
+}
+
+.jump {
+    animation: pulaPlayer 700ms ease-out;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -15.93rem;
+    }
+    to {
+        right: 140%;
+    }
+}
+
+@keyframes coinRotate {
+    from {
+        background-position: 0px 0;
+    }
+    to {
+        background-position: -1053px 0;
+    }
+}
+
+@keyframes andaPlayer {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -870px 0;
+    }
+}
+
+@keyframes pulaPlayer {
+    0%,
+    100% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 180px;
+    }
+    60% {
+        bottom: 180;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        background-color: #333;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .game-board {
+        height: calc(100% - 15rem);
+        border: none;
+        border-bottom: 6rem solid forestgreen;
+        outline: none;
+        width: 100vw;
+    }
+}
