@@ -1,30 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt--br">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>GTA - Grande Trabalhador Autônomo</title>
+        <title>Teste</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.css">
 
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
 
     <body>
-        <div class="game-board">
-            <div class="placar">
-                <p class="lucro">Lucro: R$ +<span></span></p>
-                <p class="perda">Perda: R$ -<span></span></p>
+        <div class="game">
+            <i class="audioPlay fa-solid fa-volume-xmark" style="color: #000000;"></i>
+            <div class="soundTrack">
+                <audio controls loop class="paused">
+                    <source src="audio/soundTrack.mp3" type="audio/mp3" />
+                </audio>
             </div>
-            <div class="player">
-                <div class="manRun"></div>
-            </div>
-            <div class="pipe">
-                <div class="coinBad"></div>
-                <span>Criar sua empresa</span>
-            </div>
-            <div class="pipe1">
-                <div class="coin"></div>
-                <span>Investir em ações</span>
+
+            <div class="scene">
+                <div class="floor"></div>
+                <div class="player">
+                    <div class="playerAnim"></div>
             </div>
         </div>
 
