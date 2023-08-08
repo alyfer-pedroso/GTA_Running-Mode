@@ -1,3 +1,8 @@
+@font-face {
+    font-family: gta;
+    src: url(../font/grand-theft-auto/pricedow.ttf);
+}
+
 body {
     min-width: 100vw;
     min-height: 100vh;
@@ -26,6 +31,39 @@ body {
     cursor: pointer;
     margin: 0.5rem;
     font-size: 2rem;
+}
+
+.startMenu {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(ellipse at bottom right, rgba(255, 217, 0, 0.646), #180065);
+}
+.startMenu_title {
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/teste2.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 400px;
+}
+.startMenu__btn {
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    font-family: gta;
+    font-size: 3rem;
+}
+.startMenu__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/teste.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 400px;
 }
 
 .scene {
