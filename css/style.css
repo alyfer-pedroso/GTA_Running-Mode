@@ -58,6 +58,8 @@ body {
     font-size: 3rem;
     cursor: pointer;
     z-index: 5;
+    border-radius: 10px;
+    border: none;
 }
 .startMenu__btn:active {
     background-color: black;
