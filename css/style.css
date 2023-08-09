@@ -38,6 +38,7 @@ body {
     width: 100%;
     height: 100%;
     background-image: radial-gradient(ellipse at bottom right, rgba(255, 217, 0, 0.646), #180065);
+    user-select: none;
 }
 .startMenu_title {
     position: absolute;
@@ -51,10 +52,16 @@ body {
 }
 .startMenu__btn {
     position: absolute;
-    left: 35%;
+    left: calc(50% - 60px);
     top: 30%;
     font-family: gta;
     font-size: 3rem;
+    cursor: pointer;
+    z-index: 5;
+}
+.startMenu__btn:active {
+    background-color: black;
+    color: #efefef;
 }
 .startMenu__bg {
     position: absolute;
@@ -62,7 +69,7 @@ body {
     height: 100%;
     background-image: url(../img/teste.png);
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: left bottom;
     background-size: 400px;
 }
 
