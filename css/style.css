@@ -37,8 +37,10 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(ellipse at bottom right, rgba(255, 217, 0, 0.646), #180065);
+    background-image: radial-gradient(ellipse at bottom right, #ffd9004a, #180065);
     user-select: none;
+    animation: menuBG 15s infinite;
+    transition: background-color 15s ease-in-out;
 }
 .startMenu_title {
     position: absolute;
@@ -166,6 +168,16 @@ body {
     }
     to {
         background-position: -1000px 0;
+    }
+}
+
+@keyframes menuBG {
+    0%,
+    100% {
+        background-color: #180065;
+    }
+    50% {
+        background-color: #ffd900a5;
     }
 }
 
