@@ -3,6 +3,10 @@
     src: url(../font/grand-theft-auto/pricedow.ttf);
 }
 
+html {
+    user-select: none;
+}
+
 body {
     min-width: 100vw;
     min-height: 100vh;
@@ -109,7 +113,7 @@ body {
     width: 108px;
     height: 120px;
     background-position: 0 0;
-    animation: run 0.6s steps(8) infinite;
+    /* animation: run 0.6s steps(8) infinite; */
 }
 
 .coinBad {
