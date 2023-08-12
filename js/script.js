@@ -28,12 +28,12 @@
         startMenu.style.display = "none";
         scene.style.display = "block";
 
-        // if (soundTrack[0].classList.contains("paused")) {
-        //     soundTrack[0].play();
-        //     audioPlay.classList.remove("fa-volume-xmark");
-        //     audioPlay.classList.add("fa-volume-high");
-        //     soundTrack[0].classList.remove("paused");
-        // }
+        if (soundTrack[0].classList.contains("paused")) {
+            soundTrack[0].play();
+            audioPlay.classList.remove("fa-volume-xmark");
+            audioPlay.classList.add("fa-volume-high");
+            soundTrack[0].classList.remove("paused");
+        }
 
         let jump = false;
         const jumping = (el) => {
