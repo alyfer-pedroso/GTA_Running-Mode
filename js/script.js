@@ -7,7 +7,7 @@
     const playerAnim = document.querySelector(".playerAnim");
     const floor = document.querySelector(".floor");
     const audioPlay = document.querySelector(".audioPlay");
-    const soundTrack = document.querySelector(".soundTrack audio");
+    const soundTrack = document.querySelectorAll(".soundTrack audio");
 
     let startGame = false;
     startMenu.style.display = "block";
@@ -28,19 +28,21 @@
         startMenu.style.display = "none";
         scene.style.display = "block";
 
-        if (soundTrack.classList.contains("paused")) {
-            soundTrack.play();
-            audioPlay.classList.remove("fa-volume-xmark");
-            audioPlay.classList.add("fa-volume-high");
-            soundTrack.classList.remove("paused");
-        }
+        // if (soundTrack[0].classList.contains("paused")) {
+        //     soundTrack[0].play();
+        //     audioPlay.classList.remove("fa-volume-xmark");
+        //     audioPlay.classList.add("fa-volume-high");
+        //     soundTrack[0].classList.remove("paused");
+        // }
 
         let jump = false;
         const jumping = (el) => {
             if (el.key == " " || el.key == "w") {
                 jump = true;
+                soundTrack[1].play();
             } else if (el.pointerType == "touch" || el.pointerType == "mouse") {
                 jump = true;
+                soundTrack[1].play();
             }
         };
 
@@ -117,18 +119,18 @@
         });
     };
 
-    soundTrack.pause();
+    soundTrack[0].pause();
     audioPlay.addEventListener("click", () => {
-        if (soundTrack.classList.contains("paused")) {
-            soundTrack.play();
+        if (soundTrack[0].classList.contains("paused")) {
+            soundTrack[0].play();
             audioPlay.classList.remove("fa-volume-xmark");
             audioPlay.classList.add("fa-volume-high");
-            soundTrack.classList.remove("paused");
+            soundTrack[0].classList.remove("paused");
         } else {
-            soundTrack.pause();
+            soundTrack[0].pause();
             audioPlay.classList.add("fa-volume-xmark");
             audioPlay.classList.remove("fa-volume-high");
-            soundTrack.classList.add("paused");
+            soundTrack[0].classList.add("paused");
         }
     });
 })();
