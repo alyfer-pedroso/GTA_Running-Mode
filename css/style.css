@@ -89,7 +89,7 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    background-image: linear-gradient(lightblue, white);
+    background-image: linear-gradient(#29acd7, #e4d295);
     z-index: 1;
 }
 .floor {
@@ -97,11 +97,11 @@ body {
     bottom: 0;
     width: 100%;
     height: 5rem;
-    background-image: url(../img/GrassTexture3.jpg);
+    background-image: url(../img/GrassTexture2.jpg);
     background-size: 3.5rem;
     background-position: 0 0;
     animation: floor 2s linear infinite;
-    z-index: 1;
+    z-index: 2;
 }
 .player {
     position: absolute;
@@ -109,7 +109,7 @@ body {
     left: 5px;
     width: 108px;
     height: 120px;
-    z-index: 2;
+    z-index: 3;
     transform: scale(1);
 }
 .playerAnim {
@@ -118,6 +118,18 @@ body {
     height: 120px;
     background-position: 0 0;
     /* animation: run 0.6s steps(8) infinite; */
+}
+.citySkylines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/city-1117433_1920-2.png);
+    background-repeat: repeat;
+    background-size: cover;
+    z-index: 1;
+    animation: skylines 25s linear infinite forwards;
 }
 
 .coinBad {
@@ -176,6 +188,15 @@ body {
     }
     to {
         background-position: -1000px 0;
+    }
+}
+
+@keyframes skylines {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 150% 0;
     }
 }
 

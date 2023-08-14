@@ -115,7 +115,7 @@
                 document.removeEventListener("keypress", jumping);
             }
 
-            console.log(isPlayerCollidingFloor);
+            // console.log(isPlayerCollidingFloor);
         });
     };
 
