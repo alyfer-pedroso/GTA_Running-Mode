@@ -2,6 +2,7 @@
     const game = document.querySelector(".game");
     const startMenu = document.querySelector(".startMenu");
     const startMenu__btn = document.querySelector(".startMenu__btn");
+    const epilogue = document.querySelector(".epilogue");
     const scene = document.querySelector(".scene");
     const player = document.querySelector(".player");
     const playerAnim = document.querySelector(".playerAnim");
@@ -9,23 +10,42 @@
     const audioPlay = document.querySelector(".audioPlay");
     const soundTrack = document.querySelectorAll(".soundTrack audio");
 
-    let startGame = false;
     startMenu.style.display = "block";
+    epilogue.style.display = "none";
     scene.style.display = "none";
 
-    let isStartGame = setInterval(() => {
-        if (startGame) {
-            Game();
-            clearInterval(isStartGame);
-        }
-    }, 50);
+    const typeWritter = () => {
+        const epilogueTXT = epilogue.querySelector("p");
+        const txtArray = epilogueTXT.innerHTML.split("");
+        epilogueTXT.innerHTML = "";
+        txtArray.forEach((letter, i) => {
+            setTimeout(() => {
+                epilogueTXT.innerHTML += letter;
+            }, 75 * i);
+        });
+    };
 
     startMenu__btn.addEventListener("click", () => {
-        startGame = true;
+        if (soundTrack[0].classList.contains("paused")) {
+            soundTrack[0].play();
+            audioPlay.classList.remove("fa-volume-xmark");
+            audioPlay.classList.add("fa-volume-high");
+            soundTrack[0].classList.remove("paused");
+        }
+
+        startMenu.style.display = "none";
+        epilogue.style.display = "block";
+
+        typeWritter();
+
+        setTimeout(() => {
+            Game();
+        }, 15080);
     });
 
     const Game = () => {
         startMenu.style.display = "none";
+        epilogue.style.display = "none";
         scene.style.display = "block";
 
         if (soundTrack[0].classList.contains("paused")) {

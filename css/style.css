@@ -2,6 +2,10 @@
     font-family: gta;
     src: url(../font/grand-theft-auto/pricedow.ttf);
 }
+@font-face {
+    font-family: Consolas;
+    src: url(../font/consolas/Consolas.ttf);
+}
 
 html {
     user-select: none;
@@ -20,7 +24,7 @@ body {
 .game {
     background-color: #111;
     width: 100%;
-    height: 90vh;
+    height: 94vh;
     overflow: hidden;
     position: relative;
 }
@@ -85,6 +89,35 @@ body {
     animation: menuPerson 1s ease-in-out forwards;
 }
 
+.epilogue {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: chartreuse;
+    display: flex;
+    justify-content: center;
+}
+.epilogue P {
+    font-family: "Consolas", sans-serif;
+    font-style: italic;
+    font-size: 2rem;
+    text-align: left;
+    line-height: 3rem;
+    padding: 2.5rem 1rem 1rem;
+}
+.epilogue p::after {
+    content: ".";
+    display: inline-block;
+    width: 8px;
+    height: 2.5rem;
+    background-color: chartreuse;
+    color: transparent;
+    border-radius: 15px;
+    margin-left: 5px;
+    opacity: 1;
+    animation: piscaTypeWritter 0.4s infinite;
+}
+
 .scene {
     width: 100%;
     height: 100%;
@@ -123,13 +156,25 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 1920px;
     height: 100%;
     background-image: url(../img/city-1117433_1920-2.png);
     background-repeat: repeat;
-    background-size: cover;
+    background-size: 1920px 100%;
+    background-position: 0 0;
     z-index: 1;
-    animation: skylines 25s linear infinite forwards;
+    animation: skylines 10s linear infinite forwards;
+}
+.clouds {
+    position: absolute;
+    top: 5vh;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    background-image: url(../img/clouds.png);
+    background-size: 384px;
+    background-repeat: repeat-x;
+    animation: clouds 5s linear infinite forwards;
 }
 
 .coinBad {
@@ -193,10 +238,19 @@ body {
 
 @keyframes skylines {
     from {
+        background-position: 0 -4.4rem;
+    }
+    to {
+        background-position: -1920px -4.4rem;
+    }
+}
+
+@keyframes clouds {
+    from {
         background-position: 0 0;
     }
     to {
-        background-position: 150% 0;
+        background-position: -384px 0;
     }
 }
 
@@ -237,6 +291,16 @@ body {
     }
 }
 
+@keyframes piscaTypeWritter {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
 @media screen and (min-width: 50rem) {
     body {
         justify-content: center;
@@ -247,5 +311,13 @@ body {
         height: 90vh;
         border-radius: 15px;
         outline: 15px solid black;
+    }
+    @keyframes skylines {
+        from {
+            background-position: 0 -4.4rem;
+        }
+        to {
+            background-position: -1920px -4.4rem;
+        }
     }
 }
